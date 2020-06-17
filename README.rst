@@ -8,7 +8,7 @@ Install
 
 .. code-block:: bash
 
-    pip install accf
+    pip install acff
 
 =======
 Example
@@ -16,10 +16,10 @@ Example
 
 .. code-block:: python
 
-    from accf.client import Accf
+    from acff.client import Acff
 
     sha256Hash = 'e882264b79eaabb7f66f94101fc81921565fa9496ea0c9604e8c6115b83a527a'
-    client = Accf(sha256Hash)
+    client = Acff(sha256Hash)
     result = client.operation_name({
         'channel': 'acff',
         'language': 'en'
