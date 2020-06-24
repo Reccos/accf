@@ -16,18 +16,11 @@ Example
 
 .. code-block:: python
 
-    from acff.client import Acff
+   from acff.client import Acff
 
-    sha256Hash = 'e882264b79eaabb7f66f94101fc81921565fa9496ea0c9604e8c6115b83a527a'
-    client = Acff(sha256Hash)
-    result = client.operation_name({
-        'channel': 'acff',
-        'language': 'en'
-    })
-    result = client.get_legal_navigation_for_channel({
-        'clubId': '2248',
-        'language': 'en'
-    })
+   sha256Hash = 'e882264b79eaabb7f66f94101fc81921565fa9496ea0c9604e8c6115b83a527a'
+   client = Acff(sha256Hash)
+   result = client.get_club(2248, 'en')
 
 
 =======
