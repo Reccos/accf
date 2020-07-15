@@ -33,11 +33,12 @@ class Acff(object):
                                                                                                           self.extensions))
         return result.json()
 
-    def get_games(self, series_id, start_date, end_date, language='fr'):
-        result = requests.get('%s?operationName=GetSeriesCalendar&variables={"seriesId":"%s","startDate":"%s","endDate":"%s","language":"%s"}&%s}' % (self.url,
-                                                                                                                                                      series_id, 
-                                                                                                                                                      start_date,
-                                                                                                                                                      end_date,
-                                                                                                                                                      language,
-                                                                                                                                                      self.extensions))
+    def get_games(self, clubId, start_date, end_date, language='fr'):
+        result = requests.get('%s?operationName=clubMatchesAssignations&variables={"clubId":"%s","startDate":"%s","endDate":"%s","language":"%s","hasLocation":true}&%s}' % (self.url,
+                                                                                                                                                                            clubId, 
+                                                                                                                                                                            start_date,
+                                                                                                                                                                            end_date,
+                                                                                                                                                                            language,
+                                                                                                                                                                            self.extensions))
         return result.json()
+
