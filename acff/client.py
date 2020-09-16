@@ -33,6 +33,13 @@ class Acff(object):
                                                                                                           self.extensions))
         return result.json()
 
+    def get_members(self, team_id=0, language='fr'):
+        result = requests.get('%s?operationName=GetTeam&variables={"teamId":"%s","language":"%s"}&%s}' % (self.url,
+                                                                                                          team_id, 
+                                                                                                          language,
+                                                                                                          self.extensions))
+        return result.json()
+
     def get_games(self, clubId, start_date, end_date, language='fr'):
         result = requests.get('%s?operationName=clubMatchesAssignations&variables={"clubId":"%s","startDate":"%s","endDate":"%s","language":"%s","hasLocation":true}&%s}' % (self.url,
                                                                                                                                                                             clubId, 
